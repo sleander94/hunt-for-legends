@@ -5,7 +5,7 @@ function App() {
   return (
     <div className={styles.App}>
       Hunt For Legends
-      <GameBoard />
+      <GameBoard image="teamfight-tactics-wallpaper-1" />
     </div>
   );
 }

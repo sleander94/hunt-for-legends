@@ -6,16 +6,14 @@ import GameGrid from './GameGrid';
 import Selector from './Selector';
 import styles from './GameBoard.module.css';
 
-const GameBoard = () => {
+const GameBoard = ({ image }) => {
   const [selector, setSelector] = useState(false);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   const [chars, setChars] = useState({});
 
   const getCharInfo = async () => {
-    const response = await getDoc(
-      doc(db, 'game-images/teamfight-tactics-wallpaper-1')
-    );
+    const response = await getDoc(doc(db, `game-images/${image}`));
     setChars(response.data());
   };
 
@@ -34,7 +32,7 @@ const GameBoard = () => {
 
   return (
     <div id="gameBoard" className={styles.gameBoard}>
-      <GameImage image="teamfight-tactics-wallpaper-1.png"></GameImage>
+      <GameImage image={image + '.png'}></GameImage>
       <GameGrid displaySelector={displaySelector}></GameGrid>
       {selector && <Selector chars={chars} x={x} y={y}></Selector>}
     </div>

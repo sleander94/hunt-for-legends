@@ -1,0 +1,5 @@
+.selector {
+  grid-area: 1 / 1 / 2 / 2;
+  position: absolute;
+  background-color: red;
+}

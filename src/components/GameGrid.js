@@ -3,11 +3,11 @@ import styles from './GameGrid.module.css';
 
 const GameGrid = ({ displaySelector }) => {
   return (
-    <div
+    <canvas
       id="gameGrid"
       className={styles.gameGrid}
       onClick={(e) => displaySelector(e)}
-    ></div>
+    ></canvas>
   );
 };
 

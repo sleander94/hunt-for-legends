@@ -8,14 +8,14 @@ const Selector = ({ chars, x, y }) => {
       className={styles.selector}
       style={{ top: y * 100 + '%', left: x * 100 + '%' }}
     >
-      <div className="char" onClick={() => console.log(chars[0].name)}>
-        {chars[0].name}
+      <div className="char" onClick={() => console.log(chars['char1']['name'])}>
+        {chars['char1']['name']}
       </div>
-      <div className="char" onClick={() => console.log(chars[1].name)}>
-        {chars[1].name}
+      <div className="char" onClick={() => console.log(chars['char2']['name'])}>
+        {chars['char2']['name']}
       </div>
-      <div className="char" onClick={() => console.log(chars[2].name)}>
-        {chars[2].name}
+      <div className="char" onClick={() => console.log(chars['char3']['name'])}>
+        {chars['char3']['name']}
       </div>
     </div>
   );

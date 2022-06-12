@@ -1,4 +1,5 @@
 .gameBoard {
+  position: relative;
   display: grid;
   width: 95vw;
 }

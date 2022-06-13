@@ -3,12 +3,12 @@ import { getStorage } from 'firebase/storage';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAPTHOZqQGmt9AP4NQqaBHEs3JYC8cDxnk',
-  authDomain: 'hunt-for-legends.firebaseapp.com',
-  projectId: 'hunt-for-legends',
-  storageBucket: 'hunt-for-legends.appspot.com',
-  messagingSenderId: '349374697889',
-  appId: '1:349374697889:web:3fc14fb1b00b6abed37be0',
+  apiKey: 'AIzaSyB-o64PA0PlGdG8onbOjhMQSDPPQmt8iVw',
+  authDomain: 'hunt-for-legends-3f7c3.firebaseapp.com',
+  projectId: 'hunt-for-legends-3f7c3',
+  storageBucket: 'hunt-for-legends-3f7c3.appspot.com',
+  messagingSenderId: '448650670723',
+  appId: '1:448650670723:web:957e384764bbf7cd5761b6',
 };
 
 const app = initializeApp(firebaseConfig);

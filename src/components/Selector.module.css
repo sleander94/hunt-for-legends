@@ -1,5 +1,26 @@
 .selector {
   grid-area: 1 / 1 / 2 / 2;
   position: absolute;
-  background-color: red;
+  display: grid;
+  background-color: rgb(182, 182, 182);
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.char {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px;
+  font-size: 0.6rem;
+  border-bottom: 1px solid black;
+}
+
+.char:last-child {
+  border-bottom: none;
+}
+
+.char img {
+  width: 30px;
+  height: 30px;
 }

@@ -1,13 +1,21 @@
 import React from 'react';
-import { storage } from '../firebase';
-import { ref, getDownloadURL } from 'firebase/storage';
+import styles from './Characters.module.css';
 
-const Characters = ({ image, chars, charURLs }) => {
+const Characters = ({ chars, charURLs }) => {
   return (
-    <div id="characterRef">
-      <img src={charURLs[0]}></img>
-      <img src={charURLs[1]}></img>
-      <img src={charURLs[2]}></img>
+    <div className={styles.characterContainer}>
+      <div className={styles.char} name={chars['char1']['name']}>
+        <img src={charURLs[0]} className={styles.image} />
+        <div className={styles.charName}>{chars['char1']['name']}</div>
+      </div>
+      <div className={styles.char} name={chars['char2']['name']}>
+        <img src={charURLs[1]} className={styles.image} />
+        <div className={styles.charName}>{chars['char2']['name']}</div>
+      </div>
+      <div className={styles.char} name={chars['char3']['name']}>
+        <img src={charURLs[2]} className={styles.image} />
+        <div className={styles.charName}>{chars['char3']['name']}</div>
+      </div>
     </div>
   );
 };

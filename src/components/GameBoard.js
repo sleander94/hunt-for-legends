@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import GameImage from './GameImage';
 import GameGrid from './GameGrid';
 import Selector from './Selector';

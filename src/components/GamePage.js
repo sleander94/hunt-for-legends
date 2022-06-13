@@ -5,6 +5,7 @@ import { storage } from '../firebase';
 import { ref, getDownloadURL } from 'firebase/storage';
 import GameBoard from './GameBoard';
 import Characters from './Characters';
+import charStyles from './Characters.module.css';
 
 function GamePage({ image }) {
   const [selector, setSelector] = useState(false);
@@ -13,6 +14,19 @@ function GamePage({ image }) {
   const [chars, setChars] = useState(null);
   const [charURLs, setCharURLs] = useState([]);
   const [found, setFound] = useState([]);
+  const [timer, setTimer] = useState(0);
+
+  useEffect(() => {
+    if (found.length < 3) {
+      const count = setInterval(
+        () => setTimer((timer * 10 + 0.1 * 10) / 10),
+        100
+      );
+      return () => clearInterval(count);
+    } else {
+      console.log('game over');
+    }
+  }, [timer]);
 
   const getCharInfo = async () => {
     const response = await getDoc(doc(db, `game-images/${image}`));
@@ -56,11 +70,11 @@ function GamePage({ image }) {
         y < char['ymax'] &&
         y > char['ymin']
       ) {
-        console.log(true);
         setFound([...found, chars['char' + num]['name']]);
-        console.log(found);
-      } else {
-        console.log(false);
+        const element = document.querySelector(
+          `[name=${chars['char' + num]['name']}]`
+        );
+        element.classList.add(charStyles.found);
       }
     }
   };
@@ -78,7 +92,14 @@ function GamePage({ image }) {
 
   return (
     <div className="gamePage">
-      {chars && <Characters charURLs={charURLs} chars={chars}></Characters>}
+      {chars && (
+        <Characters
+          charURLs={charURLs}
+          chars={chars}
+          found={found}
+        ></Characters>
+      )}
+      <div>{timer}</div>
       <GameBoard
         image="teamfight-tactics-wallpaper-1"
         selector={selector}

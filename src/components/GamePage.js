@@ -5,9 +5,10 @@ import { storage } from '../firebase';
 import { ref, getDownloadURL } from 'firebase/storage';
 import GameBoard from './GameBoard';
 import Characters from './Characters';
+import ScoreUploader from './ScoreUploader';
 import charStyles from './Characters.module.css';
 
-function GamePage({ image }) {
+function GamePage({ name }) {
   const [selector, setSelector] = useState(false);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
@@ -29,7 +30,7 @@ function GamePage({ image }) {
   }, [timer]);
 
   const getCharInfo = async () => {
-    const response = await getDoc(doc(db, `game-images/${image}`));
+    const response = await getDoc(doc(db, `game-images/${name}`));
     setChars(response.data());
   };
 
@@ -42,13 +43,13 @@ function GamePage({ image }) {
 
   const getCharURLs = async () => {
     const image1 = await getDownloadURL(
-      ref(storage, `character-images/${image}/${[chars[`char1`]['name']]}.jpg`)
+      ref(storage, `character-images/${name}/${[chars[`char1`]['name']]}.jpg`)
     );
     const image2 = await getDownloadURL(
-      ref(storage, `character-images/${image}/${[chars[`char2`]['name']]}.jpg`)
+      ref(storage, `character-images/${name}/${[chars[`char2`]['name']]}.jpg`)
     );
     const image3 = await getDownloadURL(
-      ref(storage, `character-images/${image}/${[chars[`char3`]['name']]}.jpg`)
+      ref(storage, `character-images/${name}/${[chars[`char3`]['name']]}.jpg`)
     );
     const images = await Promise.all([image1, image2, image3]);
     setCharURLs(images);
@@ -75,6 +76,7 @@ function GamePage({ image }) {
           `[name=${chars['char' + num]['name']}]`
         );
         element.classList.add(charStyles.found);
+        setSelector(!selector);
       }
     }
   };
@@ -92,16 +94,18 @@ function GamePage({ image }) {
 
   return (
     <div className="gamePage">
-      {chars && (
-        <Characters
-          charURLs={charURLs}
-          chars={chars}
-          found={found}
-        ></Characters>
-      )}
-      <div>{timer}</div>
+      <div>
+        {chars && (
+          <Characters
+            charURLs={charURLs}
+            chars={chars}
+            found={found}
+          ></Characters>
+        )}
+        <div>Home</div>
+      </div>
       <GameBoard
-        image="teamfight-tactics-wallpaper-1"
+        image={name}
         selector={selector}
         x={x}
         y={y}
@@ -111,6 +115,9 @@ function GamePage({ image }) {
         checkCoords={checkCoords}
         displaySelector={displaySelector}
       />
+      {found.length === 3 && (
+        <ScoreUploader timer={timer} name={name}></ScoreUploader>
+      )}
     </div>
   );
 }

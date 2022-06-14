@@ -5,7 +5,7 @@ import Selector from './Selector';
 import styles from './GameBoard.module.css';
 
 const GameBoard = ({
-  image,
+  name,
   selector,
   x,
   y,
@@ -16,7 +16,7 @@ const GameBoard = ({
 }) => {
   return (
     <div id="gameBoard" className={styles.gameBoard}>
-      <GameImage image={image + '.png'}></GameImage>
+      <GameImage name={name + '.png'}></GameImage>
       <GameGrid displaySelector={displaySelector}></GameGrid>
       {selector && (
         <Selector

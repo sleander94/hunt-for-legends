@@ -14,7 +14,7 @@ const ScoreUploader = ({ timer, name }) => {
   };
 
   return (
-    <div id="scoreUploader">
+    <div id="scoreUploader" className={styles.scoreUploader}>
       <div className={styles.time}>
         You finished the hunt in {timer} seconds!
       </div>
@@ -22,8 +22,14 @@ const ScoreUploader = ({ timer, name }) => {
         Enter your name to add your score to the leaderboard.
       </div>
       <input id="playerName"></input>
-      <Link to="/home">Cancel</Link>
-      <Link to="/teamfight-tactics-1-leaderboard" onClick={() => uploadScore()}>
+      <Link to="/home" className={styles.cancel}>
+        Cancel
+      </Link>
+      <Link
+        to="/leaderboards"
+        onClick={() => uploadScore()}
+        className={styles.submit}
+      >
         Submit Score
       </Link>
     </div>

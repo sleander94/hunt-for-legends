@@ -1,0 +1,14 @@
+.gameLink {
+  width: 175px;
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  text-decoration: none;
+  color: #06283d;
+}
+
+.gameLink img {
+  width: 175px;
+  height: auto;
+  border: 1px solid #06283d;
+}

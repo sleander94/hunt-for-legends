@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { storage } from '../firebase';
 import { ref, getDownloadURL } from 'firebase/storage';
 import styles from './GameImage.module.css';
 
-const GameImage = ({ image }) => {
+const GameImage = ({ name }) => {
+  const [image, setImage] = useState('');
   const getGameImage = async () => {
-    const url = await getDownloadURL(ref(storage, `game-images/${image}`));
-    const img = document.getElementById('gameImage');
-    img.setAttribute('src', url);
-    console.log('Getting image');
+    const url = await getDownloadURL(ref(storage, `game-images/${name}`));
+    setImage(url);
   };
 
   useEffect(() => {
@@ -16,7 +15,12 @@ const GameImage = ({ image }) => {
   }, []);
 
   return (
-    <img id="gameImage" className={styles.gameImage} alt="game image"></img>
+    <img
+      id="gameImage"
+      className={styles.gameImage}
+      alt="game image"
+      src={image}
+    ></img>
   );
 };
 

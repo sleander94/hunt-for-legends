@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -8,6 +8,7 @@ import {
 import Home from './components/Home';
 import GamePage from './components/GamePage';
 import Leaderboard from './components/Leaderboard';
+import LeaderboardPage from './components/LeaderboardPage';
 import styles from './App.module.css';
 
 function App() {
@@ -18,13 +19,19 @@ function App() {
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route
-            path="/teamfight-tactics-1"
-            element={<GamePage name="teamfight-tactics-wallpaper-1" />}
+            path="/teamfight-tactics"
+            element={<GamePage name="teamfight-tactics" />}
           />
-          <Route
-            path="/teamfight-tactics-1-leaderboard"
-            element={<Leaderboard name="teamfight-tactics-wallpaper-1" />}
-          />
+          <Route path="/leaderboards" element={<LeaderboardPage />}>
+            <Route
+              path="/leaderboards"
+              element={<Navigate to="/leaderboards/teamfight-tactics" />}
+            />
+            <Route
+              path="/leaderboards/teamfight-tactics"
+              element={<Leaderboard name="teamfight-tactics" />}
+            />
+          </Route>
         </Routes>
       </Router>
     </div>

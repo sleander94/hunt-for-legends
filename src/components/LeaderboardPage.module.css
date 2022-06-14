@@ -1,0 +1,43 @@
+.leaderboardPage {
+  width: 100%;
+  background-color: #dff6ff;
+}
+
+.header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 60px 275px 1fr;
+  gap: 32px;
+  padding: 18px;
+  height: 90px;
+  align-items: center;
+  color: #dff6ff;
+  background: #06283d;
+  box-shadow: 1px 1px 5px #06283d;
+}
+
+.headerIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.header .title {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.header a {
+  justify-self: end;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 24px;
+}
+
+.links a {
+  color: #06283d;
+  text-decoration: none;
+}

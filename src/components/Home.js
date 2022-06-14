@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { storage } from '../firebase';
 import { ref, getDownloadURL } from 'firebase/storage';
+import GameLink from './GameLink';
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     getIcon();
     console.log('getting icon');
-  }, [icon]);
+  }, []);
   return (
     <div id="home" className={styles.home}>
       <div className={styles.header}>
@@ -26,9 +27,20 @@ const Home = () => {
           className={styles.headerIcon}
         ></img>
         <h1 className={styles.title}>Hunt for Legends</h1>
+        <Link to="/leaderboards" className={styles.leaderboard}>
+          Leaderboards
+        </Link>
       </div>
-      <Link to="/teamfight-tactics-1">Teamfight Tactics</Link>
-      <Link to="/teamfight-tactics-1-leaderboard">Leaderboard</Link>
+      <div className={styles.gameLinksTitle}>
+        Pick a level to start playing!{' '}
+      </div>
+      <div id="gameLinks" className={styles.gameLinks}>
+        <GameLink
+          number="1"
+          name="teamfight-tactics"
+          title="Teamfight Tactics"
+        />
+      </div>
     </div>
   );
 };

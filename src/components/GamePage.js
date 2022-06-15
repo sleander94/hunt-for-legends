@@ -19,7 +19,7 @@ function GamePage({ name }) {
   const [found, setFound] = useState([]);
   const [timer, setTimer] = useState(0);
 
-  // Start a timer on page load
+  // Start a timer on page load, stop when all chars are found
   useEffect(() => {
     if (found.length < 3) {
       const count = setInterval(
@@ -27,35 +27,40 @@ function GamePage({ name }) {
         100
       );
       return () => clearInterval(count);
-    } else {
-      console.log('game over');
     }
   }, [timer]);
 
   const getCharInfo = async () => {
-    const response = await getDoc(doc(db, `game-images/${name}`));
-    setChars(response.data());
+    try {
+      const response = await getDoc(doc(db, `game-images/${name}`));
+      setChars(response.data());
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   useEffect(() => {
     if (!chars) {
       getCharInfo();
-      console.log('Getting chars');
     }
   }, [chars]);
 
   const getCharURLs = async () => {
-    const image1 = await getDownloadURL(
-      ref(storage, `character-images/${name}/${[chars[`char1`]['name']]}.jpg`)
-    );
-    const image2 = await getDownloadURL(
-      ref(storage, `character-images/${name}/${[chars[`char2`]['name']]}.jpg`)
-    );
-    const image3 = await getDownloadURL(
-      ref(storage, `character-images/${name}/${[chars[`char3`]['name']]}.jpg`)
-    );
-    const images = await Promise.all([image1, image2, image3]);
-    setCharURLs(images);
+    try {
+      const image1 = await getDownloadURL(
+        ref(storage, `character-images/${name}/${[chars[`char1`]['name']]}.jpg`)
+      );
+      const image2 = await getDownloadURL(
+        ref(storage, `character-images/${name}/${[chars[`char2`]['name']]}.jpg`)
+      );
+      const image3 = await getDownloadURL(
+        ref(storage, `character-images/${name}/${[chars[`char3`]['name']]}.jpg`)
+      );
+      const images = await Promise.all([image1, image2, image3]);
+      setCharURLs(images);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   useEffect(() => {

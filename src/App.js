@@ -37,14 +37,41 @@ function App() {
             path="/teamfight-tactics"
             element={<GamePage name="teamfight-tactics" />}
           />
+          <Route
+            path="/league-of-legends"
+            element={<GamePage name="league-of-legends" />}
+          />
+          <Route path="/wild-rift" element={<GamePage name="wild-rift" />} />
           <Route path="/leaderboards" element={<LeaderboardPage />}>
             <Route
               path="/leaderboards"
               element={<Navigate to="/leaderboards/teamfight-tactics" />}
             />
             <Route
+              path="/leaderboards/league-of-legends"
+              element={
+                <Leaderboard
+                  name="league-of-legends"
+                  title="League of Legends"
+                  key={1}
+                />
+              }
+            />
+            <Route
               path="/leaderboards/teamfight-tactics"
-              element={<Leaderboard name="teamfight-tactics" />}
+              element={
+                <Leaderboard
+                  name="teamfight-tactics"
+                  title="Teamfight Tactics"
+                  key={2}
+                />
+              }
+            />
+            <Route
+              path="/leaderboards/wild-rift"
+              element={
+                <Leaderboard name="wild-rift" title="Wild Rift" key={3} />
+              }
             />
           </Route>
         </Routes>

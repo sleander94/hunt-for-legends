@@ -7,18 +7,25 @@ const Leaderboard = ({ name, title }) => {
   const [scores, setScores] = useState([]);
 
   const getScores = async () => {
-    const queryScores = query(collection(db, name), orderBy('time'), limit(50));
-    const scoresList = await getDocs(queryScores);
-    let newScores = [];
-    scoresList.forEach((score) => {
-      newScores.push(score.data());
-    });
-    setScores(newScores);
+    try {
+      const queryScores = query(
+        collection(db, name),
+        orderBy('time'),
+        limit(50)
+      );
+      const scoresList = await getDocs(queryScores);
+      let newScores = [];
+      scoresList.forEach((score) => {
+        newScores.push(score.data());
+      });
+      setScores(newScores);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   useEffect(() => {
     getScores();
-    console.log('Getting scores');
   }, []);
 
   return (

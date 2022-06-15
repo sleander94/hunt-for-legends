@@ -66,7 +66,6 @@ function GamePage({ name }) {
   useEffect(() => {
     if (chars) {
       getCharURLs();
-      console.log('Getting char images');
     }
   }, [chars]);
 

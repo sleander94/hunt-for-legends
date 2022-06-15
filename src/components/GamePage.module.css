@@ -1,0 +1,12 @@
+.header {
+  z-index: 1;
+  position: sticky;
+  top: 0px;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 0px 12px 0px 12px;
+  background-color: #06283d;
+  box-shadow: 1px 1px 5px #06283d;
+}

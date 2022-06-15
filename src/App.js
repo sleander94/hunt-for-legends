@@ -77,7 +77,9 @@ function App() {
         </Routes>
       </Router>
       <div className={styles.footer}>
-        sleander94 <img src={icon} alt="github logo"></img> 2022
+        <div>sleander94</div>
+        <img src={icon} alt="github logo"></img>
+        <div>2022</div>
       </div>
     </div>
   );

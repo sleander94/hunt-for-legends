@@ -6,21 +6,27 @@ import styles from './GameLink.module.css';
 
 const GameLink = ({ name, title }) => {
   const [image, setImage] = useState('');
-  const getGameImage = async () => {
-    const url = await getDownloadURL(ref(storage, `game-images/${name}.png`));
-    setImage(url);
+
+  const getImage = async () => {
+    try {
+      const url = await getDownloadURL(ref(storage, `game-images/${name}.png`));
+      setImage(url);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   useEffect(() => {
-    getGameImage();
-    console.log('Getting image');
+    getImage();
   }, []);
 
   return (
-    <Link to="/teamfight-tactics" className={styles.gameLink}>
-      <img id="gameLink1" src={image}></img>
-      {title}
-    </Link>
+    <div className={styles.gameLink}>
+      <Link to={`/${name}`}>
+        {title}
+        <img src={image}></img>
+      </Link>
+    </div>
   );
 };
 

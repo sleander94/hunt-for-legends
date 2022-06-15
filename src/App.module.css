@@ -1,4 +1,29 @@
 .App {
+  height: 100vh;
   display: grid;
   justify-items: center;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: end;
+  gap: 36px;
+  padding: 4px;
+  color: #dff6ff;
+  background-color: #06283d;
+  font-size: 0.6rem;
+}
+
+.footer div {
+  width: 50px;
+}
+
+.footer img {
+  width: 20px;
+  height: 20px;
+  filter: invert(92%) sepia(4%) saturate(2205%) hue-rotate(178deg)
+    brightness(103%) contrast(104%);
 }

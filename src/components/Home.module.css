@@ -13,11 +13,11 @@
   display: grid;
   grid-template-columns: 60px 275px 1fr;
   gap: 32px;
-  padding: 18px;
+  padding: 24px 64px;
   align-items: center;
   color: #dff6ff;
   background-color: #06283d;
-  height: 90px;
+  height: 125px;
   box-shadow: 1px 1px 5px #06283d;
 }
 
@@ -31,11 +31,16 @@
   justify-self: end;
   text-decoration: none;
   color: #dff6ff;
+  font-size: 1.7rem;
 }
 
 .header a:hover {
   transform: scale(1.05);
   transition: transform 0.1s ease-in-out;
+}
+
+.gameLinksTitle {
+  font-size: 2rem;
 }
 
 .gameLinks {

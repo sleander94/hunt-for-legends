@@ -11,14 +11,10 @@
   align-items: center;
   align-self: end;
   gap: 36px;
-  padding: 4px;
+  padding: 8px;
   color: #dff6ff;
   background-color: #06283d;
-  font-size: 0.6rem;
-}
-
-.footer div {
-  width: 50px;
+  font-size: 1rem;
 }
 
 .footer img {

@@ -1,5 +1,5 @@
 .leaderboard {
-  margin: 24px 15%;
+  margin: 24px 20%;
   min-width: 275px;
   color: #06283d;
   background-color: #eaf6fb;
@@ -8,7 +8,7 @@
 .title {
   color: #06283d;
   background-color: #dff6ff;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   text-align: center;
   padding-bottom: 8px;
 }
@@ -16,18 +16,18 @@
 .header,
 .score {
   display: grid;
-  grid-template-columns: 40px 1fr 1fr;
+  grid-template-columns: 80px 1fr 1fr;
   gap: 24px;
-  padding: 4px 12px;
+  padding: 8px 12px;
 }
 
 .header {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   border: 1px solid #06283d;
 }
 
 .score {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   border: 1px solid #06283d;
   border-top: none;
 }

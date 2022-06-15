@@ -1,10 +1,11 @@
 .leaderboardLink a {
   display: grid;
   justify-items: center;
-  gap: 2px;
+  gap: 8px;
   text-align: center;
   text-decoration: none;
   color: #06283d;
+  font-size: 1.5rem;
 }
 
 .leaderboardLink a:hover {
@@ -15,12 +16,12 @@
 .leaderboardLink {
   text-align: center;
   display: grid;
-  gap: 6px;
+  gap: 8px;
 }
 
 .leaderboardLink img {
   width: auto;
-  height: 80px;
+  height: 15vh;
   border: 1px solid #06283d;
 }
 

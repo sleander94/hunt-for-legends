@@ -7,6 +7,7 @@ import GameBoard from './GameBoard';
 import Characters from './Characters';
 import ScoreUploader from './ScoreUploader';
 import charStyles from './Characters.module.css';
+import styles from './GamePage.module.css';
 
 function GamePage({ name }) {
   const [selector, setSelector] = useState(false);
@@ -17,6 +18,7 @@ function GamePage({ name }) {
   const [found, setFound] = useState([]);
   const [timer, setTimer] = useState(0);
 
+  // Start a timer on page load
   useEffect(() => {
     if (found.length < 3) {
       const count = setInterval(
@@ -94,7 +96,7 @@ function GamePage({ name }) {
 
   return (
     <div className="gamePage">
-      <div>
+      <div className={styles.header}>
         {chars && (
           <Characters
             charURLs={charURLs}
@@ -102,10 +104,9 @@ function GamePage({ name }) {
             found={found}
           ></Characters>
         )}
-        <div>Home</div>
       </div>
       <GameBoard
-        image={name}
+        name={name}
         selector={selector}
         x={x}
         y={y}

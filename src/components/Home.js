@@ -7,17 +7,22 @@ import styles from './Home.module.css';
 
 const Home = () => {
   const [icon, setIcon] = useState(null);
+
   const getIcon = async () => {
-    const icon = await getDownloadURL(
-      ref(storage, `character-images/icons/featherknight-icon.jpg`)
-    );
-    setIcon(icon);
+    try {
+      const icon = await getDownloadURL(
+        ref(storage, `character-images/icons/featherknight-icon.jpg`)
+      );
+      setIcon(icon);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   useEffect(() => {
     getIcon();
-    console.log('getting icon');
   }, []);
+
   return (
     <div id="home" className={styles.home}>
       <div className={styles.header}>

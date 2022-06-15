@@ -35,11 +35,9 @@ const Home = () => {
         Pick a level to start playing!{' '}
       </div>
       <div id="gameLinks" className={styles.gameLinks}>
-        <GameLink
-          number="1"
-          name="teamfight-tactics"
-          title="Teamfight Tactics"
-        />
+        <GameLink name="teamfight-tactics" title="Teamfight Tactics" />
+        <GameLink name="league-of-legends" title="League of Legends" />
+        <GameLink name="wild-rift" title="Wild Rift" />
       </div>
     </div>
   );

@@ -6,8 +6,12 @@ import styles from './GameImage.module.css';
 const GameImage = ({ name }) => {
   const [image, setImage] = useState('');
   const getGameImage = async () => {
-    const url = await getDownloadURL(ref(storage, `game-images/${name}`));
-    setImage(url);
+    try {
+      const url = await getDownloadURL(ref(storage, `game-images/${name}`));
+      setImage(url);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   useEffect(() => {

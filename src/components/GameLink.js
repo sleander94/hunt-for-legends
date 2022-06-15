@@ -7,24 +7,25 @@ import styles from './GameLink.module.css';
 const GameLink = ({ name, title }) => {
   const [image, setImage] = useState('');
 
-  const getImage = async () => {
-    try {
-      const url = await getDownloadURL(ref(storage, `game-images/${name}.png`));
-      setImage(url);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
   useEffect(() => {
+    const getImage = async () => {
+      try {
+        const url = await getDownloadURL(
+          ref(storage, `game-images/${name}.png`)
+        );
+        setImage(url);
+      } catch (e) {
+        console.error(e);
+      }
+    };
     getImage();
-  }, []);
+  }, [name]);
 
   return (
     <div className={styles.gameLink}>
       <Link to={`/${name}`}>
         {title}
-        <img src={image}></img>
+        <img src={image} alt="game background"></img>
       </Link>
     </div>
   );

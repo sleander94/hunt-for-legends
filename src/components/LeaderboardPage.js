@@ -10,15 +10,18 @@ const LeaderboardPage = () => {
   const [icon, setIcon] = useState(null);
 
   const getIcon = async () => {
-    const icon = await getDownloadURL(
-      ref(storage, `character-images/icons/spatula.jpg`)
-    );
-    setIcon(icon);
+    try {
+      const icon = await getDownloadURL(
+        ref(storage, `character-images/icons/spatula.jpg`)
+      );
+      setIcon(icon);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   useEffect(() => {
     getIcon();
-    console.log('getting icon');
   }, []);
 
   return (

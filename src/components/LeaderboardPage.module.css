@@ -37,7 +37,7 @@
   padding-top: 24px;
 }
 
-.links a {
-  color: #06283d;
-  text-decoration: none;
+#links img {
+  height: 75px;
+  width: auto;
 }

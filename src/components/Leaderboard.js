@@ -6,27 +6,26 @@ import styles from './Leaderboard.module.css';
 const Leaderboard = ({ name, title }) => {
   const [scores, setScores] = useState([]);
 
-  const getScores = async () => {
-    try {
-      const queryScores = query(
-        collection(db, name),
-        orderBy('time'),
-        limit(50)
-      );
-      const scoresList = await getDocs(queryScores);
-      let newScores = [];
-      scoresList.forEach((score) => {
-        newScores.push(score.data());
-      });
-      setScores(newScores);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
   useEffect(() => {
+    const getScores = async () => {
+      try {
+        const queryScores = query(
+          collection(db, name),
+          orderBy('time'),
+          limit(50)
+        );
+        const scoresList = await getDocs(queryScores);
+        let newScores = [];
+        scoresList.forEach((score) => {
+          newScores.push(score.data());
+        });
+        setScores(newScores);
+      } catch (e) {
+        console.error(e);
+      }
+    };
     getScores();
-  }, []);
+  }, [name]);
 
   return (
     <div id="leaderboard" className={styles.leaderboard}>

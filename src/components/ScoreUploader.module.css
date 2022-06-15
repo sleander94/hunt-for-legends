@@ -1,0 +1,63 @@
+.scoreUploader {
+  background-color: #dff6ff;
+  z-index: 2;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  border: 1px solid #06283d;
+  padding: 24px;
+  display: grid;
+  grid: 1fr 1fr 1fr 1fr / 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.time {
+  grid-area: 1 / 1 / 2 / 3;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.instructions {
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+.scoreUploader input {
+  grid-area: 3 / 1 / 4 / 3;
+  height: 2rem;
+  width: 70%;
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: #eaf6fb;
+  border: 1px solid #06283d;
+}
+
+.scoreUploader input:focus {
+  outline: none !important;
+  border: 1px solid #719ece;
+  box-shadow: 0 0 5px #719ece;
+}
+
+.scoreUploader a {
+  width: 100px;
+  text-decoration: none;
+  color: #06283d;
+}
+
+.scoreUploader a:hover {
+  transform: scale(1.1);
+  transition: transform 0.1s ease-in-out;
+}
+
+.cancel {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+.submit {
+  grid-area: 4 / 2 / 5 / 3;
+}

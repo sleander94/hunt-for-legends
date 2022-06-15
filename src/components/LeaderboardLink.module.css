@@ -1,0 +1,35 @@
+.leaderboardLink a {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  text-align: center;
+  text-decoration: none;
+  color: #06283d;
+}
+
+.leaderboardLink a:hover {
+  transform: scale(1.05);
+  transition: transform 0.1s ease-in-out;
+}
+
+.leaderboardLink {
+  text-align: center;
+  display: grid;
+  gap: 6px;
+}
+
+.leaderboardLink img {
+  width: auto;
+  height: 80px;
+  border: 1px solid #06283d;
+}
+
+.play {
+  font-size: 0.8rem;
+  color: #06283d;
+}
+
+.leaderboardLink .play:hover {
+  transform: scale(1.15);
+  transition: transform 0.1s ease-in-out;
+}

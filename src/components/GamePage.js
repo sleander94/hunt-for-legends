@@ -28,46 +28,56 @@ function GamePage({ name }) {
       );
       return () => clearInterval(count);
     }
+    // Disabling dependency error due to not passing found to useEffect
+    // found is already checked every .1s due to timer updating
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timer]);
-
-  const getCharInfo = async () => {
-    try {
-      const response = await getDoc(doc(db, `game-images/${name}`));
-      setChars(response.data());
-    } catch (e) {
-      console.error(e);
-    }
-  };
 
   useEffect(() => {
     if (!chars) {
+      const getCharInfo = async () => {
+        try {
+          const response = await getDoc(doc(db, `game-images/${name}`));
+          setChars(response.data());
+        } catch (e) {
+          console.error(e);
+        }
+      };
       getCharInfo();
     }
-  }, [chars]);
-
-  const getCharURLs = async () => {
-    try {
-      const image1 = await getDownloadURL(
-        ref(storage, `character-images/${name}/${[chars[`char1`]['name']]}.jpg`)
-      );
-      const image2 = await getDownloadURL(
-        ref(storage, `character-images/${name}/${[chars[`char2`]['name']]}.jpg`)
-      );
-      const image3 = await getDownloadURL(
-        ref(storage, `character-images/${name}/${[chars[`char3`]['name']]}.jpg`)
-      );
-      const images = await Promise.all([image1, image2, image3]);
-      setCharURLs(images);
-    } catch (e) {
-      console.error(e);
-    }
-  };
+  }, [chars, name]);
 
   useEffect(() => {
     if (chars) {
+      const getCharURLs = async () => {
+        try {
+          const image1 = await getDownloadURL(
+            ref(
+              storage,
+              `character-images/${name}/${[chars[`char1`]['name']]}.jpg`
+            )
+          );
+          const image2 = await getDownloadURL(
+            ref(
+              storage,
+              `character-images/${name}/${[chars[`char2`]['name']]}.jpg`
+            )
+          );
+          const image3 = await getDownloadURL(
+            ref(
+              storage,
+              `character-images/${name}/${[chars[`char3`]['name']]}.jpg`
+            )
+          );
+          const images = await Promise.all([image1, image2, image3]);
+          setCharURLs(images);
+        } catch (e) {
+          console.error(e);
+        }
+      };
       getCharURLs();
     }
-  }, [chars]);
+  }, [chars, name]);
 
   const checkCoords = (num) => {
     const char = chars['char' + num];

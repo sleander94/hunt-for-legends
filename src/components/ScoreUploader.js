@@ -21,16 +21,16 @@ const ScoreUploader = ({ timer, name }) => {
       <div className={styles.instructions}>
         Enter your name to add your score to the leaderboard.
       </div>
-      <input id="playerName"></input>
+      <input id="playerName" autoFocus></input>
       <Link to="/home" className={styles.cancel}>
         Cancel
       </Link>
       <Link
-        to="/leaderboards"
+        to={`/leaderboards/${name}`}
         onClick={() => uploadScore()}
         className={styles.submit}
       >
-        Submit Score
+        Submit
       </Link>
     </div>
   );

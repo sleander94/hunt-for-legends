@@ -7,24 +7,25 @@ import styles from './LeaderboardLink.module.css';
 const LeaderboardLink = ({ name, title }) => {
   const [image, setImage] = useState('');
 
-  const getGameImage = async () => {
-    try {
-      const url = await getDownloadURL(ref(storage, `game-images/${name}.png`));
-      setImage(url);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
   useEffect(() => {
+    const getGameImage = async () => {
+      try {
+        const url = await getDownloadURL(
+          ref(storage, `game-images/${name}.png`)
+        );
+        setImage(url);
+      } catch (e) {
+        console.error(e);
+      }
+    };
     getGameImage();
-  }, []);
+  }, [name]);
 
   return (
     <div className={styles.leaderboardLink}>
       <Link to={`/leaderboards/${name}`} className={styles.leaderboard}>
         {title}
-        <img src={image}></img>
+        <img src={image} alt="game board"></img>
       </Link>
       <Link to={`/${name}`} className={styles.play}>
         Play

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../firebase';
 import { query, orderBy, limit, collection, getDocs } from 'firebase/firestore';
-import HomeButton from './HomeButton';
 import styles from './Leaderboard.module.css';
 
 const Leaderboard = ({ name }) => {
   const [scores, setScores] = useState([]);
+
   const getScores = async () => {
     const queryScores = query(collection(db, name), orderBy('time'), limit(50));
     const scoresList = await getDocs(queryScores);
@@ -17,18 +17,16 @@ const Leaderboard = ({ name }) => {
   };
 
   useEffect(() => {
-    if (scores.length === 0) {
-      getScores();
-      console.log('Getting scores');
-    }
-  }, [scores]);
+    getScores();
+    console.log('Getting scores');
+  }, []);
 
   return (
     <div id="leaderboard" className={styles.leaderboard}>
       <div className={styles.header}>
         <div className={styles.rank}>Rank</div>
         <div className={styles.name}>Name</div>
-        <div className={styles.time}>Time</div>
+        <div className={styles.time}>Time (s)</div>
       </div>
       {scores.map((score) => {
         return (

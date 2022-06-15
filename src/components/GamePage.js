@@ -6,6 +6,7 @@ import { ref, getDownloadURL } from 'firebase/storage';
 import GameBoard from './GameBoard';
 import Characters from './Characters';
 import ScoreUploader from './ScoreUploader';
+import HomeButton from './HomeButton';
 import charStyles from './Characters.module.css';
 import styles from './GamePage.module.css';
 
@@ -104,6 +105,7 @@ function GamePage({ name }) {
             found={found}
           ></Characters>
         )}
+        <HomeButton />
       </div>
       <GameBoard
         name={name}

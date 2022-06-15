@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   gap: 60px;
+  width: 60vw;
 }
 
 .char {

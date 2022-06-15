@@ -5,6 +5,7 @@ import styles from './GameImage.module.css';
 
 const GameImage = ({ name }) => {
   const [image, setImage] = useState('');
+
   const getGameImage = async () => {
     try {
       const url = await getDownloadURL(ref(storage, `game-images/${name}`));

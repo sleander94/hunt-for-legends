@@ -1,0 +1,46 @@
+.home {
+  width: 100%;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  color: #06283d;
+  background-color: #dff6ff;
+}
+
+.header {
+  z-index: 2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 60px 275px 1fr;
+  gap: 32px;
+  padding: 18px;
+  align-items: center;
+  color: #dff6ff;
+  background-color: #06283d;
+  height: 90px;
+  box-shadow: 1px 1px 5px #06283d;
+}
+
+.headerIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.header a {
+  justify-self: end;
+  text-decoration: none;
+  color: #dff6ff;
+}
+
+.header a:hover {
+  transform: scale(1.05);
+  transition: transform 0.1s ease-in-out;
+}
+
+.gameLinks {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}

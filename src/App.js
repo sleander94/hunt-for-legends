@@ -25,7 +25,6 @@ function App() {
 
   useEffect(() => {
     getIcon();
-    console.log('getting icon');
   }, []);
   return (
     <div className={styles.App}>

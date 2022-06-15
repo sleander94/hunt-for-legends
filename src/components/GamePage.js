@@ -110,15 +110,17 @@ function GamePage({ name }) {
   };
 
   return (
-    <div className="gamePage">
+    <div className={styles.gamePage}>
       <div className={styles.header}>
-        {chars && (
-          <Characters
-            charURLs={charURLs}
-            chars={chars}
-            found={found}
-          ></Characters>
-        )}
+        <div>
+          {chars && (
+            <Characters
+              charURLs={charURLs}
+              chars={chars}
+              found={found}
+            ></Characters>
+          )}
+        </div>
         <HomeButton />
       </div>
       <GameBoard

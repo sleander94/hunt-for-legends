@@ -1,14 +1,23 @@
-.gameLink {
-  width: 175px;
+.gameLink a {
   display: grid;
   justify-items: center;
   gap: 2px;
+  text-align: center;
   text-decoration: none;
   color: #06283d;
 }
 
+.gameLink a:hover {
+  transform: scale(1.05);
+  transition: transform 0.1s ease-in-out;
+}
+
+.gameLink {
+  text-align: center;
+}
+
 .gameLink img {
-  width: 175px;
-  height: auto;
+  width: auto;
+  height: 120px;
   border: 1px solid #06283d;
 }

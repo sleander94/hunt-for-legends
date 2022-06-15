@@ -10,11 +10,22 @@
   justify-content: center;
   align-items: center;
   align-self: end;
-  gap: 36px;
   padding: 8px;
   color: #dff6ff;
   background-color: #06283d;
   font-size: 1rem;
+}
+
+.footer div {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #dff6ff;
 }
 
 .footer img {

@@ -3,7 +3,7 @@ import { db } from '../firebase';
 import { query, orderBy, limit, collection, getDocs } from 'firebase/firestore';
 import styles from './Leaderboard.module.css';
 
-const Leaderboard = ({ name }) => {
+const Leaderboard = ({ name, title }) => {
   const [scores, setScores] = useState([]);
 
   const getScores = async () => {
@@ -23,6 +23,7 @@ const Leaderboard = ({ name }) => {
 
   return (
     <div id="leaderboard" className={styles.leaderboard}>
+      <div className={styles.title}>{title}</div>
       <div className={styles.header}>
         <div className={styles.rank}>Rank</div>
         <div className={styles.name}>Name</div>

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { storage } from '../firebase';
 import { ref, getDownloadURL } from 'firebase/storage';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import HomeButton from './HomeButton';
+import LeaderboardLink from './LeaderboardLink';
 import styles from './LeaderboardPage.module.css';
 
 const LeaderboardPage = () => {
@@ -19,6 +20,7 @@ const LeaderboardPage = () => {
     getIcon();
     console.log('getting icon');
   }, []);
+
   return (
     <div id="leaderboardPage" className={styles.leaderboardPage}>
       <div className={styles.header}>
@@ -26,9 +28,10 @@ const LeaderboardPage = () => {
         <h1 className={styles.title}>Leaderboards</h1>
         <HomeButton />
       </div>
-      <div className={styles.links}>
-        <Link to="/leaderboards/teamfight-tactics">Teamfight Tactics</Link>
-        <Link to="/leaderboards/teamfight-tactics">League of Legends</Link>
+      <div id="links" className={styles.links}>
+        <LeaderboardLink name="teamfight-tactics" title="Teamfight Tactics" />
+        <LeaderboardLink name="league-of-legends" title="League of Legends" />
+        <LeaderboardLink name="wild-rift" title="Wild Rift" />
       </div>
       <Outlet />
     </div>

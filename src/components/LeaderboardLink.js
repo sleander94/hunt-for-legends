@@ -27,9 +27,6 @@ const LeaderboardLink = ({ name, title }) => {
         <div className={styles.title}>{title}</div>
         <img src={image} alt="game board"></img>
       </Link>
-      <Link to={`/${name}`} className={styles.play}>
-        Play
-      </Link>
     </div>
   );
 };

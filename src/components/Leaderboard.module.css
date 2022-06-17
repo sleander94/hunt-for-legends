@@ -1,6 +1,7 @@
 .leaderboard {
   margin: 24px 20%;
   min-width: 275px;
+  max-width: 900px;
   color: #06283d;
   background-color: #eaf6fb;
 }
@@ -16,7 +17,7 @@
 .header,
 .score {
   display: grid;
-  grid-template-columns: 80px 1fr 1fr;
+  grid-template-columns: 1fr 3fr 3fr;
   gap: 24px;
   padding: 8px 12px;
 }

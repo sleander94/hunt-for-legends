@@ -12,6 +12,14 @@
   font-size: 1.7rem;
   text-align: center;
   padding-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title a {
+  color: #06283d;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .header,
@@ -36,4 +44,10 @@
 .scoreTime,
 .time {
   justify-self: end;
+}
+
+@media only screen and (max-width: 700px) {
+  .title {
+    font-size: 5vw;
+  }
 }

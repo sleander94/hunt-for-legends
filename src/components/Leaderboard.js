@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../firebase';
 import { query, orderBy, limit, collection, getDocs } from 'firebase/firestore';
 import styles from './Leaderboard.module.css';
+import { Link } from 'react-router-dom';
 
 const Leaderboard = ({ name, title }) => {
   const [scores, setScores] = useState([]);
@@ -29,7 +30,10 @@ const Leaderboard = ({ name, title }) => {
 
   return (
     <div id="leaderboard" className={styles.leaderboard}>
-      <div className={styles.title}>{title}</div>
+      <div className={styles.title}>
+        <div className={styles.content}>{title}</div>
+        <Link to={`/${name}`}>Play</Link>
+      </div>{' '}
       <div className={styles.header}>
         <div className={styles.rank}>Rank</div>
         <div className={styles.name}>Name</div>

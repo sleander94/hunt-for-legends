@@ -29,25 +29,29 @@ const Leaderboard = ({ name, title }) => {
   }, [name]);
 
   return (
-    <div id="leaderboard" className={styles.leaderboard}>
-      <div className={styles.title}>
-        <div className={styles.content}>{title}</div>
-        <Link to={`/${name}`}>Play</Link>
-      </div>{' '}
-      <div className={styles.header}>
-        <div className={styles.rank}>Rank</div>
-        <div className={styles.name}>Name</div>
-        <div className={styles.time}>Time (s)</div>
+    <div className={styles.leaderboardContainer}>
+      <div id="leaderboard" className={styles.leaderboard}>
+        <div className={styles.title}>
+          <div className={styles.content}>{title}</div>
+          <Link to={`/${name}`}>Play</Link>
+        </div>{' '}
+        <div className={styles.header}>
+          <div className={styles.rank}>Rank</div>
+          <div className={styles.name}>Name</div>
+          <div className={styles.time}>Time (s)</div>
+        </div>
+        {scores.map((score) => {
+          return (
+            <div key={scores.indexOf(score)} className={styles.score}>
+              <div className={styles.scoreRank}>
+                {scores.indexOf(score) + 1}
+              </div>
+              <div className={styles.scoreName}>{score.name}</div>
+              <div className={styles.scoreTime}>{score.time}</div>
+            </div>
+          );
+        })}
       </div>
-      {scores.map((score) => {
-        return (
-          <div key={scores.indexOf(score)} className={styles.score}>
-            <div className={styles.scoreRank}>{scores.indexOf(score) + 1}</div>
-            <div className={styles.scoreName}>{score.name}</div>
-            <div className={styles.scoreTime}>{score.time}</div>
-          </div>
-        );
-      })}
     </div>
   );
 };

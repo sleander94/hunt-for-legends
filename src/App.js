@@ -76,13 +76,15 @@ function App() {
         </Routes>
       </Router>
       <div className={styles.footer}>
-        <div>sleander94</div>
-        <div>
-          <a href="https://github.com/sleander94">
-            <img src={icon} alt="github logo"></img>
-          </a>
+        <div className={styles.footerDivs}>
+          <div>sleander94</div>
+          <div>
+            <a href="https://github.com/sleander94">
+              <img src={icon} alt="github logo"></img>
+            </a>
+          </div>
+          <div>2022</div>
         </div>
-        <div>2022</div>
       </div>
     </div>
   );

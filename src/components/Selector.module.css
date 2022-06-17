@@ -20,6 +20,6 @@
 }
 
 .char img {
-  width: 60px;
-  height: 60px;
+  width: auto;
+  height: 5vh;
 }

@@ -34,3 +34,23 @@
   transform: scale(1.15);
   transition: transform 0.1s ease-in-out;
 }
+
+@media only screen and (max-width: 800px) {
+  .title {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 3.4vw;
+  }
+
+  .leaderboardLink .play {
+    font-size: 3.4vw;
+  }
+  .leaderboardLink {
+    max-width: 25vw;
+  }
+  .leaderboardLink img {
+    max-width: 25vw;
+    height: auto;
+    object-fit: cover;
+  }
+}

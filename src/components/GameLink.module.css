@@ -22,3 +22,10 @@
   height: 33vh;
   border: 1px solid #06283d;
 }
+
+@media only screen and (max-width: 800px) {
+  .gameLink img {
+    width: 80vw;
+    height: auto;
+  }
+}

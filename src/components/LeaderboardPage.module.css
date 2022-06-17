@@ -41,3 +41,29 @@
   height: 75px;
   width: auto;
 }
+
+@media only screen and (max-width: 800px) {
+  .header {
+    grid: 1fr 1fr / 1fr 4fr;
+    padding: 12px 36px;
+    gap: 0px;
+    column-gap: 24px;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+  }
+  .headerIcon {
+    grid-area: 1 / 1 / 3 / 2;
+    width: 80px;
+    height: 80px;
+  }
+  .header h1 {
+    grid-area: 1 / 2 / 2 / 3;
+    font-size: 1.6rem;
+  }
+  .header a {
+    grid-area: 2 / 2 / 3 / 3;
+    justify-self: center;
+    font-size: 1.2rem;
+  }
+}

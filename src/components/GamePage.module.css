@@ -10,8 +10,17 @@
   grid-template-columns: 60vw 1fr;
   align-items: center;
   gap: 12px;
-  height: 90px;
-  padding: 12px 64px;
+  height: 10vh;
+  padding: 1vh 64px;
   background-color: #06283d;
   box-shadow: 1px 1px 5px #06283d;
+}
+
+@media only screen and (max-width: 850px) {
+  .header {
+    grid-template-columns: 75vw 1fr;
+    justify-items: center;
+    padding: 0px 24px;
+    gap: 12px;
+  }
 }

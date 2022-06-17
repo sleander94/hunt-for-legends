@@ -24,7 +24,7 @@ const LeaderboardLink = ({ name, title }) => {
   return (
     <div className={styles.leaderboardLink}>
       <Link to={`/leaderboards/${name}`} className={styles.leaderboard}>
-        {title}
+        <div className={styles.title}>{title}</div>
         <img src={image} alt="game board"></img>
       </Link>
       <Link to={`/${name}`} className={styles.play}>

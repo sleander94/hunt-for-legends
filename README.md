@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Hunt For Legends
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+League of Legends themed photo tagging app made with React and Firebase.
 
-## Available Scripts
+## Desktop demo
 
-In the project directory, you can run:
+<p align="center" width="100%">
+    <img width="50%" src="https://media.giphy.com/media/0KVlks9PxfIpZ1mDnD/giphy.gif" alt="desktop demo gif">
+</p>
 
-### `npm start`
+## [Live Site](https://hunt-for-legends-3f7c3.web.app/home) 👈
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Description
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+I made this app to gain experience using databases to serve data to the client. All images, icons, and game data are store on a firebase server. I realize that for an app of this size it would be more effective to store the images and coordinates clientside to reduce loading times, but that was not the purpose of this project.
 
-### `npm test`
+The biggest challenges I faced during this project were responsively styling the site and implementing the game logic. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I initially designed the app to look good on desktop, and it was a pain to get all the images to properly display on smaller screens. The game is still best played in landscape mode on mobile due to the aspect ratios of the level images. After this project I started designing my apps for all screen sizes from the beginning to save myself the headache. 
 
-### `npm run build`
+The game logic was a little tricky get right, but I ended up overlaying the the image with an html canvas of the same size. The canvas listens for the user's clicks and references the coordinates stored in firebase to determine if they selected the correct character.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Select from one of three levels and hunt for the characters listed. 
+- Enter your name upon completetion to see how your time compares to other players.
+- View leaderboards for each level and play again from the same screen.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React
+- Firebase
+- CSS Modules

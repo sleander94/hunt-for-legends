@@ -16,7 +16,7 @@ I made this app to gain experience using databases to serve data to the client. 
 
 The biggest challenges I faced during this project were responsively styling the site and implementing the game logic. 
 
-I initially designed the app to look good on desktop, and it was a pain to get all the images to properly display on smaller screens. The game is still best played in landscape mode on mobile due to the aspect ratios of the level images. After this project I started designing my apps for all screen sizes from the beginning to save myself the headache. 
+I initially designed the app to look good on desktop, and it was a pain to get all the images to properly display on smaller screens. The game is still best played in landscape mode on mobile due to the aspect ratios of the level images.
 
 The game logic was a little tricky get right, but I ended up overlaying the the image with an html canvas of the same size. The canvas listens for the user's clicks and references the coordinates stored in firebase to determine if they selected the correct character.
 

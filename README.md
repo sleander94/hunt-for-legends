@@ -23,7 +23,7 @@ The game logic was a little tricky get right, but I ended up overlaying the the 
 ## Features
 
 - Select from one of three levels and hunt for the characters listed. 
-- Enter your name upon completetion to see how your time compares to other players.
+- Enter your name upon completion to see how your time compares to other players.
 - View leaderboards for each level and play again from the same screen.
 
 ## Technologies Used

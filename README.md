@@ -1,14 +1,12 @@
 # Hunt For Legends
 
-League of Legends themed photo tagging app made with React and Firebase.
+## Live Site: [hunt-for-legends-3f7c3.web.app](https://hunt-for-legends-3f7c3.web.app/home) 
 
-## Desktop demo
-
-<p align="center" width="100%">
-    <img width="50%" src="https://media.giphy.com/media/0KVlks9PxfIpZ1mDnD/giphy.gif" alt="desktop demo gif">
+<p align="left" width="100%">
+    <img width="60%" src="https://media.giphy.com/media/0KVlks9PxfIpZ1mDnD/giphy.gif" alt="desktop demo gif">
 </p>
 
-## [Live Site](https://hunt-for-legends-3f7c3.web.app/home) 👈
+League of Legends themed photo tagging app made with React and Firebase.
 
 ## Description
 
@@ -31,3 +29,9 @@ The game logic was a little tricky get right, but I ended up overlaying the the 
 - React
 - Firebase
 - CSS Modules
+
+## Author
+
+Stephen Leander
+
+[stephenleander.dev](https://stephenleander.dev)
